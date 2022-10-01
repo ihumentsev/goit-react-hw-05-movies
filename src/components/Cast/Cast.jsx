@@ -13,7 +13,7 @@ export const Cast = () => {
 
   useEffect(() => {
     API.FeatchCast(movieId).then(res => setCast(res.cast));
-  }, []);
+  }, [movieId]);
   return (
     <>
       <h2>Cast</h2>

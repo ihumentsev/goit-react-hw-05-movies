@@ -10,7 +10,7 @@ export const Reviews = () => {
 
   useEffect(() => {
     API.FeatchReviews(movieId).then(res => setReviews(res.data.results));
-  }, []);
+  }, [movieId]);
 
   return (
     <>

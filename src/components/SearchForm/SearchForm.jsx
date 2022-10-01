@@ -1,5 +1,5 @@
 import { MdVideoLibrary } from 'react-icons/md';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import css from '../SearchForm/SearchForm.module.css';
 
 export const SearchForm = ({ onSubmit }) => {
