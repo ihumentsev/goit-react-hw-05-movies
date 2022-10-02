@@ -14,8 +14,6 @@ export default function MovieDetails() {
   const { movieId } = useParams();
   const [movie, setMovie] = useState('');
   const location = useLocation();
-  console.log(location.state);
-  console.log(movieId);
 
   const setActiveLink = ({ isActive }) => {
     return !isActive ? css.navLink : `${css.navLink} ${css.active}`;

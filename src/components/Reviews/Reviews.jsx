@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import * as API from 'Services/API';
 import css from '../Reviews/Reviews.module.css';
 
-export const Reviews = () => {
+export default function Reviews() {
   const [reviews, setReviews] = useState(null);
   const { movieId } = useParams();
 
@@ -31,4 +31,4 @@ export const Reviews = () => {
       </ul>
     </>
   );
-};
+}

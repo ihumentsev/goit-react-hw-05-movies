@@ -5,7 +5,7 @@ import * as API from 'Services/API';
 import css from '../Cast/Cast.module.css';
 import noImage from '../../images/1200px-No-Image-Placeholder.svg.png';
 
-export const Cast = () => {
+export default function Cast() {
   const [cast, setCast] = useState([]);
   const { movieId } = useParams();
 
@@ -33,4 +33,4 @@ export const Cast = () => {
       </ul>
     </>
   );
-};
+}

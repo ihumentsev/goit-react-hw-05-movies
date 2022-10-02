@@ -1,8 +1,9 @@
 import { MdVideoLibrary } from 'react-icons/md';
 import { useState } from 'react';
 import css from '../SearchForm/SearchForm.module.css';
+import PropTypes from 'prop-types';
 
-export const SearchForm = ({ onSubmit }) => {
+export const SearchForm = ({ onSubmit, searchingValue }) => {
   const [searching, setSearching] = useState('');
 
   const handlerSearchChange = event => {
@@ -30,4 +31,8 @@ export const SearchForm = ({ onSubmit }) => {
       />
     </form>
   );
+};
+
+SearchForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
 };
