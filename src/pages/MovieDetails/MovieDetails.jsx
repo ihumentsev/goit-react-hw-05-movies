@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
 import * as API from 'Services/API';
+import ReactPlayer from 'react-player';
 import {
   Link,
   Outlet,
@@ -13,6 +14,7 @@ import css from '../MovieDetails/MovieDetails.module.css';
 export default function MovieDetails() {
   const { movieId } = useParams();
   const [movie, setMovie] = useState('');
+  const [videos, setVideos] = useState('');
   const location = useLocation();
 
   const setActiveLink = ({ isActive }) => {
@@ -24,6 +26,7 @@ export default function MovieDetails() {
 
   useEffect(() => {
     API.FeatchMovieDetails(movieId).then(movie => setMovie(movie));
+    API.FeatchVideo(movieId).then(res => setVideos(res.data.results[1].key));
   }, [movieId]);
 
   return (
@@ -49,6 +52,7 @@ export default function MovieDetails() {
               <p className={css.text}>{movie.overview}</p>
               <h3>Genres:</h3>
               <p>{genrs}</p>
+              <ReactPlayer url={`https://www.youtube.com/watch?v=${videos}`} />
             </div>
           </div>
           <div>

@@ -29,10 +29,15 @@ function FeatchCast(movieId) {
 function FeatchReviews(movieId) {
   return AXIOS.get(`movie/${movieId}/reviews?`);
 }
+
+function FeatchVideo(movieId) {
+  return AXIOS.get(`movie/${movieId}/videos?`);
+}
 export {
   fetchTrendMovies,
   FeatchSearchMovies,
   FeatchMovieDetails,
   FeatchCast,
   FeatchReviews,
+  FeatchVideo,
 };
